@@ -1,6 +1,11 @@
+<!DOCTYPE html>
 <html>
+   
+
   <head>
+    
     <script src="http://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
   </head>
   <body>
     <div id="app">
@@ -8,14 +13,13 @@
       <img v-bind:src= "image">
     </div>
   </body>
+  <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          message: 'Hello Vue.js!',
+          image: './images/StaffDojo.png'
+        }
+      });
+    </script>
 </html>
-
-<script>
-  var app = new Vue({
-    el: '#app',
-    data: {
-      message: 'Hello Vue.js!',
-      image: '/images/StaffDojo.png'
-    }
-  });
-</script>
