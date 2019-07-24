@@ -1,22 +1,21 @@
-<!DOCTYPE html>
 <html>
-    <head>
-        <script src="http://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <!-- <script src="./js/index.js"></script> -->
+  <head>
+    <script src="http://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{ message }}</p>
+      <img v-bind:src= "image">
+    </div>
+  </body>
+</html>
 
-    </head>
-    <body>
-        <div id="app">
-            <p>{{ message }}</p>
-            <img v-bind:src= "image"></img>
-          </div>
-    </body>
-  </html>
-
-  <script>var app = new Vue({
+<script>
+  var app = new Vue({
     el: '#app',
     data: {
       message: 'Hello Vue.js!',
       image: '/images/StaffDojo.png'
     }
-  });</script>
+  });
+</script>
