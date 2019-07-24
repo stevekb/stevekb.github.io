@@ -11,13 +11,23 @@
     <div id="app">
       <p>{{ message }}</p>
       <img v-bind:src= "image">
+      <div v-for="lvl in lvls">
+          <label>{{lvl.label}}</label>
+          <input type="range" v-model="lvl.value" min="1" v-bind:max="lvl.largest">
+          <span>{{lvl.value}}</span>
+      </div>
     </div>
     <script type="text/javascript">
+    var lvls= [
+      {label: 'Staff Dojo 1', value: 5, largest: '35'},
+      {label: 'Staff Dojo 2', value: 8, largest: '35'}
+      ]
       var app = new Vue({
         el: '#app',
         data: {
           message: 'Hello Vue.js!',
-          image: './images/StaffDojo.png'
+          image: './images/StaffDojo.png',
+          lvls: lvls
         }
       });
     </script>
