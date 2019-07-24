@@ -39,7 +39,7 @@
       <p>{{ message }}</p>
       
       <div v-for="lvl in lvls">
-          <img v-bind:src= "getImage(lvl.value)"><br>
+          <img v-bind:src= "getImage(lvl.subtype, lvl.type, lvl.value)"><br>
           <label>{{lvl.label}}</label>
           <input type="range" class="slider" v-model="lvl.value" min="1" v-bind:max="lvl.largest">
           <span class="output">{{lvl.value}}</span>
@@ -47,8 +47,8 @@
     </div>
     <script type="text/javascript">
     var lvls= [
-      {label: 'Staff Dojo 1', value: 5, largest: '35'},
-      {label: 'Staff Dojo 2', value: 26, largest: '35'}
+      {label: 'Staff Dojo 1', subtype: "Staff", type: "Dojo", value: 5, largest: '35'},
+      {label: 'Staff Dojo 2', subtype: "Staff", type: "Dojo", value: 26, largest: '35'}
       ]
     var images= [
       {
@@ -67,22 +67,24 @@
           lvls: lvls
         },
         methods: {
-          getImage: function(n){
-            if(n < 6){
-              return images[0].path + "1.png"
-            } else if (n < 11){
-              return images[0].path + "2.png"
-            } else if (n < 16){
-              return images[0].path + "3.png"
-            } else if (n < 21){
-              return images[0].path + "4.png"
-            } else if (n < 26){
-              return images[0].path + "5.png"
-            } else if (n < 31){
-              return images[0].path + "6.png"
+          getImage: function(subtype, type, value){
+            slvl = ""
+            if(value < 6){
+              slvl = "1"
+            } else if (value < 11){
+              slvl =  "2"
+            } else if (value < 16){
+              slvl =  "3"
+            } else if (value < 21){
+              slvl =  "4"
+            } else if (value < 26){
+              slvl =  "5"
+            } else if (value < 31){
+              slvl =  "6"
             } else {
-              return images[0].path + "7.png"
+              slvl =  "7"
             }
+            return './images/' + subtype + type + 'S' + slvl + '.png'
           }
 
         }
