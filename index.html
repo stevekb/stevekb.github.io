@@ -10,8 +10,9 @@
   <body>
     <div id="app">
       <p>{{ message }}</p>
-      <img v-bind:src= "image">
+      
       <div v-for="lvl in lvls">
+          <img v-bind:src= "getImage(lvl.value)">
           <label>{{lvl.label}}</label>
           <input type="range" v-model="lvl.value" min="1" v-bind:max="lvl.largest">
           <span>{{lvl.value}}</span>
@@ -20,14 +21,43 @@
     <script type="text/javascript">
     var lvls= [
       {label: 'Staff Dojo 1', value: 5, largest: '35'},
-      {label: 'Staff Dojo 2', value: 8, largest: '35'}
+      {label: 'Staff Dojo 2', value: 26, largest: '35'}
       ]
+    var images= [
+      {
+        path: './images/StaffDojoS'
+      },
+      {
+        path: './images/StaffDojoS2.png'
+      }
+    ]
+    
       var app = new Vue({
         el: '#app',
         data: {
           message: 'Hello Vue.js!',
-          image: './images/StaffDojo.png',
+          image: images,
           lvls: lvls
+        },
+        methods: {
+          getImage: function(n){
+            if(n < 6){
+              return images[0].path + "1.png"
+            } else if (n < 11){
+              return images[0].path + "2.png"
+            } else if (n < 16){
+              return images[0].path + "3.png"
+            } else if (n < 21){
+              return images[0].path + "4.png"
+            } else if (n < 26){
+              return images[0].path + "5.png"
+            } else if (n < 31){
+              return images[0].path + "6.png"
+            } else {
+              return images[0].path + "7.png"
+            }
+          }
+
         }
       });
     </script>
