@@ -12,6 +12,9 @@
     .right{
       display:inline-block;
     }
+    .InteractiveModule {
+      text-align: center;
+    }
     #facility {
       display: inline-block;
       width: 300px;
@@ -47,7 +50,7 @@
   </head>
   <body>
     <div id="app">
-      
+      <div class="InteractiveModule">
       <span v-for="lvl in lvls">
           <div id="facility">
           <img v-bind:src= "getImage(lvl.subtype, lvl.type, lvl.value)"><br>
@@ -57,6 +60,7 @@
         </div>
         <br v-if="getFacilityBoolean(lvl.label)">
       </span>
+    </div>
     </div>
     <script type="text/javascript">
     var lvls= [
