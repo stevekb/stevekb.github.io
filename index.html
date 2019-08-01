@@ -6,6 +6,17 @@
     
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <style>
+    .left {
+      display:inline-block;
+    }
+    .right{
+      display:inline-block;
+    }
+    #facility {
+      display: inline-block;
+      width: 300px;
+      height: 300px;
+    }
     .slider {
       -webkit-appearance: none;
       height: 15px;
@@ -36,19 +47,23 @@
   </head>
   <body>
     <div id="app">
-      <p>{{ message }}</p>
       
-      <div v-for="lvl in lvls">
+      <span v-for="lvl in lvls">
+          <div id="facility">
           <img v-bind:src= "getImage(lvl.subtype, lvl.type, lvl.value)"><br>
           <label>{{lvl.label}}</label>
           <input type="range" class="slider" v-model="lvl.value" min="1" v-bind:max="lvl.largest">
           <span class="output">{{lvl.value}}</span>
-      </div>
+        </div>
+        <br v-if="getFacilityBoolean(lvl.label)">
+      </span>
     </div>
     <script type="text/javascript">
     var lvls= [
       {label: 'Staff Dojo 1', subtype: "Staff", type: "Dojo", value: 5, largest: '35'},
-      {label: 'Staff Dojo 2', subtype: "Staff", type: "Dojo", value: 26, largest: '35'}
+      {label: 'Staff Dojo 2', subtype: "Staff", type: "Dojo", value: 26, largest: '35'},
+      {label: 'Sword Dojo 1', subtype: "Sword", type: "Dojo", value: 11, largest: '35'},
+      {label: 'Sword Dojo 2', subtype: "Sword", type: "Dojo", value: 16, largest: '35'}
       ]
     var images= [
       {
@@ -85,8 +100,18 @@
               slvl =  "7"
             }
             return './images/' + subtype + type + 'S' + slvl + '.png'
+          },
+          getFacilityBreak: function(label){
+            if (parseInt(label.substring(label.length-1)) == 2)
+            { return ".right"} else { return ".left"}
+          },
+          getFacilityBoolean: function(label){
+            i = parseInt(label.charAt(label.length-1))
+            // console.log("test")
+            if(i == 1)
+            { return false} else { return true}
           }
-
+        
         }
       });
     </script>
