@@ -67,23 +67,62 @@
     </div>
     <script type="text/javascript">
     var lvls= [
-      {label: 'Axe Dojo 1', subtype: "Axe", type: "Dojo", value: 5, largest: '35'},
-      {label: 'Axe Dojo 2', subtype: "Axe", type: "Dojo", value: 26, largest: '35'},
-      {label: 'Blade Dojo 1', subtype: "Blade", type: "Dojo", value: 5, largest: '35'},
-      {label: 'Blade Dojo 2', subtype: "Blade", type: "Dojo", value: 26, largest: '35'},
-      {label: 'Bow Dojo 1', subtype: "Bow", type: "Dojo", value: 5, largest: '35'},
-      {label: 'Bow Dojo 2', subtype: "Bow", type: "Dojo", value: 26, largest: '35'},
-      {label: 'Dagger Dojo 1', subtype: "Dagger", type: "Dojo", value: 5, largest: '35'},
-      {label: 'Dagger Dojo 2', subtype: "Dagger", type: "Dojo", value: 26, largest: '35'},
-      {label: 'Lance Dojo 1', subtype: "Lance", type: "Dojo", value: 5, largest: '35'},
-      {label: 'Lance Dojo 2', subtype: "Lance", type: "Dojo", value: 26, largest: '35'},
-      {label: 'Staff Dojo 1', subtype: "Staff", type: "Dojo", value: 5, largest: '35'},
-      {label: 'Staff Dojo 2', subtype: "Staff", type: "Dojo", value: 26, largest: '35'},
-      {label: 'Sword Dojo 1', subtype: "Sword", type: "Dojo", value: 11, largest: '35'},
-      {label: 'Sword Dojo 2', subtype: "Sword", type: "Dojo", value: 16, largest: '35'},
-      {label: 'Wand Dojo 1', subtype: "Wand", type: "Dojo", value: 11, largest: '35'},
-      {label: 'Wand Dojo 2', subtype: "Wand", type: "Dojo", value: 16, largest: '35'}
+      {label: 'Axe Dojo 1', element: "Wind", subtype: "Axe", type: "Dojo", value: 5, largest: '35'},
+      {label: 'Axe Dojo 2', element: "Wind", subtype: "Axe", type: "Dojo", value: 26, largest: '35'},
+      {label: 'Blade Dojo 1', element: "Water", subtype: "Blade", type: "Dojo", value: 5, largest: '35'},
+      {label: 'Blade Dojo 2', element: "Water", subtype: "Blade", type: "Dojo", value: 26, largest: '35'},
+      {label: 'Bow Dojo 1', element: "Fire", subtype: "Bow", type: "Dojo", value: 5, largest: '35'},
+      {label: 'Bow Dojo 2', element: "Fire", subtype: "Bow", type: "Dojo", value: 26, largest: '35'},
+      {label: 'Dagger Dojo 1', element: "Dark", subtype: "Dagger", type: "Dojo", value: 5, largest: '35'},
+      {label: 'Dagger Dojo 2', element: "Dark", subtype: "Dagger", type: "Dojo", value: 26, largest: '35'},
+      {label: 'Lance Dojo 1', element: "Water", subtype: "Lance", type: "Dojo", value: 5, largest: '35'},
+      {label: 'Lance Dojo 2', element: "Water", subtype: "Lance", type: "Dojo", value: 26, largest: '35'},
+      {label: 'Staff Dojo 1', element: "Light", subtype: "Staff", type: "Dojo", value: 5, largest: '35'},
+      {label: 'Staff Dojo 2', element: "Light", subtype: "Staff", type: "Dojo", value: 26, largest: '35'},
+      {label: 'Sword Dojo 1', element: "Fire", subtype: "Sword", type: "Dojo", value: 11, largest: '35'},
+      {label: 'Sword Dojo 2', element: "Fire", subtype: "Sword", type: "Dojo", value: 16, largest: '35'},
+      {label: 'Wand Dojo 1', element: "Wind", subtype: "Wand", type: "Dojo", value: 11, largest: '35'},
+      {label: 'Wand Dojo 2', element: "Wind", subtype: "Wand", type: "Dojo", value: 16, largest: '35'}
       ]
+
+    var dojoUpgrade = [
+      {requirements: { }},
+      {requirements: {time: '30', rupies: '3000', dyrenellS1: '10' }},
+      {requirements: {time: '60', rupies: '3500', dyrenellS1: '10' }},
+      {requirements: {time: '60', rupies: '4000', dyrenellS1: '10' }},
+      {requirements: {time: '60', rupies: '4500', dyrenellS1: '10' }},
+      {requirements: {time: '60', rupies: '5000', dyrenellS1: '20' }},
+      {requirements: {time: '60', rupies: '6000', dyrenellS1: '20' }},
+      {requirements: {time: '60', rupies: '7000', dyrenellS1: '20' }},
+      {requirements: {time: '60', rupies: '8000', dyrenellS1: '20' }},
+      {requirements: {time: '60', rupies: '9000', dyrenellS1: '20' }},
+      {requirements: {time: '60', rupies: '10000', dyrenellS1: '30', dyrenellS2: '5', insigniaS1: '10' }},
+      {requirements: {time: '60', rupies: '12000', dyrenellS1: '30', dyrenellS2: '5', insigniaS1: '10' }},
+      {requirements: {time: '60', rupies: '14000', dyrenellS1: '30', dyrenellS2: '5', insigniaS1: '10' }},
+      {requirements: {time: '60', rupies: '16000', dyrenellS1: '30', dyrenellS2: '10', insigniaS1: '20' }},
+      {requirements: {time: '60', rupies: '18000', dyrenellS1: '30', dyrenellS2: '10', insigniaS1: '20' }},
+      {requirements: {time: '60', rupies: '20000', dyrenellS1: '50', dyrenellS2: '20', insigniaS1: '40' }},
+      {requirements: {time: '60', rupies: '25000', dyrenellS1: '50', dyrenellS2: '20', insigniaS1: '40' }},
+      {requirements: {time: '60', rupies: '30000', dyrenellS1: '50', dyrenellS2: '20', insigniaS1: '40' }},
+      {requirements: {time: '60', rupies: '35000', dyrenellS1: '70', dyrenellS2: '30', insigniaS1: '60' }},
+      {requirements: {time: '60', rupies: '40000', dyrenellS1: '70', dyrenellS2: '30', insigniaS1: '60' }},
+      {requirements: {time: '60', rupies: '50000', dyrenellS1: '100', dyrenellS2: '40', dyrenellS3: '20',insigniaS1: '80' }},
+      {requirements: {time: '60', rupies: '60000', dyrenellS1: '100', dyrenellS2: '40', dyrenellS3: '30',insigniaS1: '80' }},
+      {requirements: {time: '60', rupies: '70000', dyrenellS1: '100', dyrenellS2: '40', dyrenellS3: '40',insigniaS1: '80' }},
+      {requirements: {time: '60', rupies: '80000', dyrenellS1: '150', dyrenellS2: '50', dyrenellS3: '50',insigniaS1: '100' }},
+      {requirements: {time: '60', rupies: '90000', dyrenellS1: '150', dyrenellS2: '50', dyrenellS3: '60',insigniaS1: '100' }},
+      {requirements: {time: '60', rupies: '100000', dyrenellS1: '200', dyrenellS2: '60', dyrenellS3: '70',insigniaS1: '120', insigniaS2: '20' }},
+      {requirements: {time: '60', rupies: '110000', dyrenellS1: '200', dyrenellS2: '60', dyrenellS3: '80',insigniaS1: '120', insigniaS2: '30' }},
+      {requirements: {time: '60', rupies: '120000', dyrenellS1: '200', dyrenellS2: '60', dyrenellS3: '90',insigniaS1: '120', insigniaS2: '40' }},
+      {requirements: {time: '60', rupies: '130000', dyrenellS1: '300', dyrenellS2: '80', dyrenellS3: '100',insigniaS1: '160', insigniaS2: '50' }},
+      {requirements: {time: '60', rupies: '140000', dyrenellS1: '300', dyrenellS2: '80', dyrenellS3: '110',insigniaS1: '160', insigniaS2: '60' }},
+      {requirements: {time: '60', rupies: '160000', dyrenellS1: '400', dyrenellS2: '100', dyrenellS3: '120',insigniaS1: '200', insigniaS2: '80' }},
+      {requirements: {time: '60', rupies: '180000', dyrenellS1: '400', dyrenellS2: '100', dyrenellS3: '130',insigniaS1: '200', insigniaS2: '80' }},
+      {requirements: {time: '60', rupies: '200000', dyrenellS1: '400', dyrenellS2: '100', dyrenellS3: '140',insigniaS1: '200', insigniaS2: '80' }},
+      {requirements: {time: '60', rupies: '220000', dyrenellS1: '500', dyrenellS2: '120', dyrenellS3: '150',insigniaS1: '240', insigniaS2: '100' }},
+      {requirements: {time: '60', rupies: '240000', dyrenellS1: '500', dyrenellS2: '120', dyrenellS3: '160',insigniaS1: '240', insigniaS2: '100' }}
+      
+    ] 
     var images= [
       {
         path: './images/StaffDojoS'
