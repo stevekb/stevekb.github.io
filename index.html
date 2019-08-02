@@ -7,16 +7,24 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <style>
     .left {
-      display:inline-block;
+      float: left;
     }
     .right{
-      display:inline-block;
+      float: left;
     }
     .InteractiveModule {
       text-align: center;
+      float: left;
+      width: 50%;
+    }
+    .MaterialsModule{
+      position: top;
+      float: left;
+      width: 50%;
     }
     #facility {
       display: inline-block;
+      float: left
       width: 300px;
       height: 300px;
     }
@@ -64,25 +72,29 @@
         <br v-if="getFacilityBoolean(lvl.label)">
       </span>
     </div>
+    
+    <!-- materials go here -->
+    <div class="MaterialsModule">Test</div>
+
     </div>
     <script type="text/javascript">
     var lvls= [
-      {label: 'Axe Dojo 1', element: "Wind", subtype: "Axe", type: "Dojo", value: 5, largest: '35'},
-      {label: 'Axe Dojo 2', element: "Wind", subtype: "Axe", type: "Dojo", value: 26, largest: '35'},
-      {label: 'Blade Dojo 1', element: "Water", subtype: "Blade", type: "Dojo", value: 5, largest: '35'},
-      {label: 'Blade Dojo 2', element: "Water", subtype: "Blade", type: "Dojo", value: 26, largest: '35'},
-      {label: 'Bow Dojo 1', element: "Fire", subtype: "Bow", type: "Dojo", value: 5, largest: '35'},
-      {label: 'Bow Dojo 2', element: "Fire", subtype: "Bow", type: "Dojo", value: 26, largest: '35'},
-      {label: 'Dagger Dojo 1', element: "Dark", subtype: "Dagger", type: "Dojo", value: 5, largest: '35'},
-      {label: 'Dagger Dojo 2', element: "Dark", subtype: "Dagger", type: "Dojo", value: 26, largest: '35'},
-      {label: 'Lance Dojo 1', element: "Water", subtype: "Lance", type: "Dojo", value: 5, largest: '35'},
-      {label: 'Lance Dojo 2', element: "Water", subtype: "Lance", type: "Dojo", value: 26, largest: '35'},
-      {label: 'Staff Dojo 1', element: "Light", subtype: "Staff", type: "Dojo", value: 5, largest: '35'},
-      {label: 'Staff Dojo 2', element: "Light", subtype: "Staff", type: "Dojo", value: 26, largest: '35'},
-      {label: 'Sword Dojo 1', element: "Fire", subtype: "Sword", type: "Dojo", value: 11, largest: '35'},
-      {label: 'Sword Dojo 2', element: "Fire", subtype: "Sword", type: "Dojo", value: 16, largest: '35'},
-      {label: 'Wand Dojo 1', element: "Wind", subtype: "Wand", type: "Dojo", value: 11, largest: '35'},
-      {label: 'Wand Dojo 2', element: "Wind", subtype: "Wand", type: "Dojo", value: 16, largest: '35'}
+      {label: 'Axe Dojo 1', element: "Wind", subtype: "Axe", type: "Dojo", value: 1, largest: '35'},
+      {label: 'Axe Dojo 2', element: "Wind", subtype: "Axe", type: "Dojo", value: 1, largest: '35'},
+      {label: 'Blade Dojo 1', element: "Water", subtype: "Blade", type: "Dojo", value: 1, largest: '35'},
+      {label: 'Blade Dojo 2', element: "Water", subtype: "Blade", type: "Dojo", value: 1, largest: '35'},
+      {label: 'Bow Dojo 1', element: "Fire", subtype: "Bow", type: "Dojo", value: 1, largest: '35'},
+      {label: 'Bow Dojo 2', element: "Fire", subtype: "Bow", type: "Dojo", value: 1, largest: '35'},
+      {label: 'Dagger Dojo 1', element: "Dark", subtype: "Dagger", type: "Dojo", value: 1, largest: '35'},
+      {label: 'Dagger Dojo 2', element: "Dark", subtype: "Dagger", type: "Dojo", value: 1, largest: '35'},
+      {label: 'Lance Dojo 1', element: "Water", subtype: "Lance", type: "Dojo", value: 1, largest: '35'},
+      {label: 'Lance Dojo 2', element: "Water", subtype: "Lance", type: "Dojo", value: 1, largest: '35'},
+      {label: 'Staff Dojo 1', element: "Light", subtype: "Staff", type: "Dojo", value: 1, largest: '35'},
+      {label: 'Staff Dojo 2', element: "Light", subtype: "Staff", type: "Dojo", value: 1, largest: '35'},
+      {label: 'Sword Dojo 1', element: "Fire", subtype: "Sword", type: "Dojo", value: 1, largest: '35'},
+      {label: 'Sword Dojo 2', element: "Fire", subtype: "Sword", type: "Dojo", value: 1, largest: '35'},
+      {label: 'Wand Dojo 1', element: "Wind", subtype: "Wand", type: "Dojo", value: 1, largest: '35'},
+      {label: 'Wand Dojo 2', element: "Wind", subtype: "Wand", type: "Dojo", value: 1, largest: '35'}
       ]
 
     var dojoUpgrade = [
